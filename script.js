@@ -66,9 +66,12 @@ function addRecord(e) {
   // Criar o registro
   const record = { date, entry, exit, companyName, salary };
 
-  // Recupera os registros do mês
+  // Recupera os registros do mês e adiciona o novo registro
   let monthlyRecords = JSON.parse(localStorage.getItem(monthYear)) || [];
   monthlyRecords.push(record);
+
+   // Ordena os registros por data antes de salvar
+   monthlyRecords.sort((a, b) => new Date(a.date) - new Date(b.date));
 
   // Salva os registros de volta no localStorage, com a chave sendo o mês e ano
   localStorage.setItem(monthYear, JSON.stringify(monthlyRecords));
@@ -111,19 +114,29 @@ function loadRecords() {
 
 // Função para excluir um registro
 function deleteRecord(index, monthYear) {
+  if (confirm("Tem certeza que deseja excluir este registro?")) {
   let records = JSON.parse(localStorage.getItem(monthYear));
   records.splice(index, 1);
   localStorage.setItem(monthYear, JSON.stringify(records));
   loadRecords();
+  }
 }
 // Função para editar um registro
 function editRecord(index, monthYear) {
   let records = JSON.parse(localStorage.getItem(monthYear));
   let record = records[index];
+
+  // Preenche os campos do formulário com os dados do registro selecionado
   document.getElementById("start-date").value = record.date;
   document.getElementById("entry-time").value = record.entry;
   document.getElementById("exit-time").value = record.exit;
+
+   // Remove o registro da lista
   records.splice(index, 1);
+
+  // Ordena os registros antes de salvar novamente
+  records.sort((a, b) => new Date(a.date) - new Date(b.date));
+
   localStorage.setItem(monthYear, JSON.stringify(records));
   loadRecords();
 }
@@ -140,3 +153,4 @@ function checkCompanyAndSalary() {
     document.getElementById("save-company-salary-btn").disabled = false; //habiltar o botão de salvar
   }
 }
+
