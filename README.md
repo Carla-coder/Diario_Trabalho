@@ -16,6 +16,10 @@ Um aplicativo web responsivo para registrar e gerenciar seus dias trabalhados de
 
 A tela inicial exibe um cabeçalho com os campos para nome da empresa e salário, além de um formulário para adicionar os dias trabalhados. Abaixo, uma tabela organizada lista os registros adicionados.
 
+- Tela inicial
+
+![tela inicial](https://github.com/user-attachments/assets/18b6131e-a1da-4db1-99f2-8ce55e1fc0ee)
+
 ## 💻 Tecnologias Utilizadas
 
 - **HTML5**: Estrutura da página.
