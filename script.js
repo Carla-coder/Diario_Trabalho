@@ -70,8 +70,8 @@ function addRecord(e) {
   let monthlyRecords = JSON.parse(localStorage.getItem(monthYear)) || [];
   monthlyRecords.push(record);
 
-   // Ordena os registros por data antes de salvar
-   monthlyRecords.sort((a, b) => new Date(a.date) - new Date(b.date));
+  // Ordena os registros por data antes de salvar
+  monthlyRecords.sort((a, b) => new Date(a.date) - new Date(b.date));
 
   // Salva os registros de volta no localStorage, com a chave sendo o mês e ano
   localStorage.setItem(monthYear, JSON.stringify(monthlyRecords));
@@ -115,10 +115,10 @@ function loadRecords() {
 // Função para excluir um registro
 function deleteRecord(index, monthYear) {
   if (confirm("Tem certeza que deseja excluir este registro?")) {
-  let records = JSON.parse(localStorage.getItem(monthYear));
-  records.splice(index, 1);
-  localStorage.setItem(monthYear, JSON.stringify(records));
-  loadRecords();
+    let records = JSON.parse(localStorage.getItem(monthYear));
+    records.splice(index, 1);
+    localStorage.setItem(monthYear, JSON.stringify(records));
+    loadRecords();
   }
 }
 // Função para editar um registro
@@ -131,7 +131,7 @@ function editRecord(index, monthYear) {
   document.getElementById("entry-time").value = record.entry;
   document.getElementById("exit-time").value = record.exit;
 
-   // Remove o registro da lista
+  // Remove o registro da lista
   records.splice(index, 1);
 
   // Ordena os registros antes de salvar novamente
@@ -153,4 +153,3 @@ function checkCompanyAndSalary() {
     document.getElementById("save-company-salary-btn").disabled = false; //habiltar o botão de salvar
   }
 }
-
