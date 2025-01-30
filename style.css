@@ -1,0 +1,399 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column; /* Alinha os itens verticalmente */
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  position: relative;
+}
+
+.watermark {
+  text-align: center;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  margin-top: 20px;
+  pointer-events: none; /* Garante que o texto não interfira na interação com outros elementos */
+}
+
+body::before {
+  content: ''; /* Cria um pseudo-elemento vazio */
+  position: absolute; /* Posiciona o pseudo-elemento sobre o conteúdo */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('image/fundo.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.7;
+  z-index: -1;
+}
+
+.container {
+  width: 90%;
+  max-width: 800px;
+  background: #e8e8e8;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra interna */
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.header-info label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.header-info input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  width: 150px;
+}
+
+/* Estilo do botão de salvar (desabilitado) */
+#save-company-salary-btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Ajuste para os campos do formulário (empresa e salário) depois de serem salvos */
+#company-salary-section input:disabled {
+  background-color: #f4f4f4; /* Fundo mais claro para campos desabilitados */
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Agrupar Data de Início, Horário de Entrada e Horário de Saída */
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.form-row label {
+  flex: 1;
+  text-align: left;
+}
+
+.form-row input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  width: 100%;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px;
+  background: #83aba3;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button:hover {
+  background: #5d7c74;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  position: relative;
+}
+
+body::before {
+  content: ''; /* Cria um pseudo-elemento vazio */
+  position: absolute; /* Posiciona o pseudo-elemento sobre o conteúdo */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('image/fundo.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.7;
+  z-index: -1;
+}
+
+.container {
+  width: 90%;
+  max-width: 800px;
+  background: #e8e8e8;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra interna */
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.header-info label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.header-info input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  width: 150px;
+}
+
+/* Estilo do botão de salvar (desabilitado) */
+#save-company-salary-btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Ajuste para os campos do formulário (empresa e salário) depois de serem salvos */
+#company-salary-section input:disabled {
+  background-color: #f4f4f4; /* Fundo mais claro para campos desabilitados */
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Contêiner do formulário */
+.form-container {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+/* Agrupar Data de Início, Horário de Entrada e Horário de Saída */
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.form-row label {
+  flex: 1;
+  text-align: left;
+}
+
+.form-row input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  width: 100%;
+  background-color: #f4f4f4;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px;
+  background: #83aba3;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button:hover {
+  background: #5d7c74;
+}
+
+/* Container para a tabela com rolagem */
+.table-container {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-top: 20px;
+}
+
+/* Estilização da Tabela */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+th {
+  background: #5d7c74;
+  color: white;
+  position: sticky; /* Faz o cabeçalho ficar fixo */
+  top: 0; /* Fixa o cabeçalho no topo */
+  z-index: 1;
+}
+
+/* Cor alternada para linhas ímpares e pares */
+tr:nth-child(odd) {
+  background-color: #e8e8e8; /* Cor para linhas ímpares */
+}
+
+tr:nth-child(even) {
+  background-color: white; /* Cor para linhas pares */
+}
+
+/* Ajuste para centralizar ações */
+th:last-child,
+td:last-child {
+  text-align: center;
+  width: 100px;
+  white-space: nowrap;
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 600px) {
+  form {
+    display: block;
+  }
+
+  /* Tabela responsiva */
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  tr {
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background: white;
+  }
+
+  /* Exibir as células da tabela como blocos empilhados */
+  th,
+  td {
+    width: 100%;
+    display: block;
+    text-align: right;
+    padding: 5px 10px;
+  }
+
+  th {
+    background: #5d7c74;
+    color: white;
+    text-align: center;
+  }
+
+  td {
+    background: #f4f4f4;
+    border-top: 1px solid #ddd;
+  }
+
+  /* Ajuste no texto da última coluna */
+  th:last-child,
+  td:last-child {
+    text-align: center;
+  }
+}
+
+/* Responsividade para telas médias (600px a 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+  table {
+    width: 100%;
+  }
+
+  th,
+  td {
+    padding: 8px;
+  }
+
+  th {
+    background-color: #5d7c74;
+    color: white;
+    text-align: left;
+  }
+}
+
+/* Responsividade para telas grandes (900px em diante) */
+@media (min-width: 901px) {
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th,
+  td {
+    padding: 10px;
+    text-align: left;
+  }
+
+  th {
+    background: #5d7c74;
+    color: white;
+  }
+
+  th:last-child,
+  td:last-child {
+    text-align: center;
+  }
+}

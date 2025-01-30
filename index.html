@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro Diário</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Registro de Dias Trabalhados</h1>
+        <div class="header-info" id="company-salary-section">
+          <label>
+            Empresa:
+            <input
+              type="text"
+              id="company-name"
+              placeholder="Digite o nome da empresa"
+            />
+          </label>
+          <label>
+            Salário: R$
+            <input type="number" id="salary-input" placeholder="0,00" min="0" />
+          </label>
+          <button id="save-company-salary-btn">Salvar Empresa e Salário</button>
+        </div>
+      </header>
+
+      <div class="form-container">
+        <form id="work-form">
+          <div class="form-row">
+            <label>
+              Data de Início:
+              <input type="date" id="start-date" name="start-date" required />
+            </label>
+            <label>
+              Horário de Entrada:
+              <input type="time" id="entry-time" name="entry-time" required />
+            </label>
+            <label>
+              Horário de Saída:
+              <input type="time" id="exit-time" name="exit-time" required />
+            </label>
+          </div>
+          <button type="submit">Adicionar Registro</button>
+        </form>
+      </div>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Data</th>
+              <th>Entrada</th>
+              <th>Saída</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="records-table"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="watermark">Desenvolvido por Carla Coder © 2025</div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
