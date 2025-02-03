@@ -168,7 +168,9 @@ function generateMonthlyReport() {
     reportHTML += `<thead><tr><th>Data</th><th>Entrada</th><th>Saída</th></tr></thead>`;
     reportHTML += `<tbody>`;
     records.forEach((record) => {
-      reportHTML += `<tr><td>${formatDate(record.date)}</td><td>${record.entry}</td><td>${record.exit}</td></tr>`;
+      reportHTML += `<tr><td>${formatDate(record.date)}</td><td>${
+        record.entry
+      }</td><td>${record.exit}</td></tr>`;
     });
     reportHTML += `</tbody></table>`;
   });
@@ -176,18 +178,20 @@ function generateMonthlyReport() {
   document.getElementById("reportContent").innerHTML = reportHTML;
 
   // Abre o modal
-  const reportModal = new bootstrap.Modal(document.getElementById('reportModal'));
+  const reportModal = new bootstrap.Modal(
+    document.getElementById("reportModal")
+  );
   reportModal.show();
 }
 
 function downloadPDF() {
   const element = document.getElementById("reportContent");
   const opt = {
-    margin:       10,
-    filename:     'relatorio_mensal.pdf',
-    image:        { type: 'jpeg', quality: 0.98 },
-    html2canvas:  { scale: 2 },
-    jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+    margin: 10,
+    filename: "relatorio_mensal.pdf",
+    image: { type: "jpeg", quality: 0.98 },
+    html2canvas: { scale: 2 },
+    jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
   };
 
   // Usando a biblioteca html2pdf.js para gerar o PDF

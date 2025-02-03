@@ -274,8 +274,6 @@ button {
   cursor: pointer;
   border-radius: 5px;
   display: inline-block;
-  /* margin-left: auto;
-  margin-right: auto; */
 }
 
 button:hover {
@@ -370,7 +368,8 @@ td:last-child {
   border-collapse: collapse;
 }
 
-.modal-body th, .modal-body td {
+.modal-body th,
+.modal-body td {
   padding: 8px;
   border: 1px solid #ddd;
   text-align: left;
