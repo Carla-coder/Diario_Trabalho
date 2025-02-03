@@ -153,3 +153,43 @@ function checkCompanyAndSalary() {
     document.getElementById("save-company-salary-btn").disabled = false; //habiltar o botão de salvar
   }
 }
+
+function generateMonthlyReport() {
+  const allRecords = Object.keys(localStorage)
+    .filter((key) => key.includes("-"))
+    .sort();
+
+  let reportHTML = "<h4>Relatório Mensal</h4>";
+
+  allRecords.forEach((monthYear) => {
+    let records = JSON.parse(localStorage.getItem(monthYear));
+    reportHTML += `<h5>Registros de ${monthYear}</h5>`;
+    reportHTML += `<table class="table table-bordered">`;
+    reportHTML += `<thead><tr><th>Data</th><th>Entrada</th><th>Saída</th></tr></thead>`;
+    reportHTML += `<tbody>`;
+    records.forEach((record) => {
+      reportHTML += `<tr><td>${formatDate(record.date)}</td><td>${record.entry}</td><td>${record.exit}</td></tr>`;
+    });
+    reportHTML += `</tbody></table>`;
+  });
+
+  document.getElementById("reportContent").innerHTML = reportHTML;
+
+  // Abre o modal
+  const reportModal = new bootstrap.Modal(document.getElementById('reportModal'));
+  reportModal.show();
+}
+
+function downloadPDF() {
+  const element = document.getElementById("reportContent");
+  const opt = {
+    margin:       10,
+    filename:     'relatorio_mensal.pdf',
+    image:        { type: 'jpeg', quality: 0.98 },
+    html2canvas:  { scale: 2 },
+    jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+  };
+
+  // Usando a biblioteca html2pdf.js para gerar o PDF
+  html2pdf().from(element).set(opt).save();
+}

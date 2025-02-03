@@ -58,13 +58,14 @@ header {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 10px;
-  margin-top: 10px;
+  gap: 30px; /* Aumenta o espaçamento entre os elementos */
+  margin-top: 20px; /* Dá mais espaço acima */
+  justify-content: center; /* Centraliza os elementos */
 }
 
 .header-info label {
   font-weight: bold;
-  margin-right: 10px;
+  /* margin-right: 10px; */
 }
 
 .header-info input {
@@ -72,7 +73,22 @@ header {
   border: 1px solid #ccc;
   border-radius: 5px;
   text-align: center;
-  width: 150px;
+  width: 180px;
+}
+
+/* Ajuste para o botão */
+#save-company-salary-btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #83aba3;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-left: 20px; /* Afastando o botão dos campos */
+}
+
+#save-company-salary-btn:hover {
+  background-color: #5d7c74;
 }
 
 /* Estilo do botão de salvar (desabilitado) */
@@ -227,6 +243,7 @@ h1 {
   display: flex;
   justify-content: space-between;
   gap: 10px;
+  margin-bottom: 20px; /* Adiciona espaçamento abaixo dos inputs */
 }
 
 .form-row label {
@@ -244,6 +261,10 @@ h1 {
   background-color: #f4f4f4;
 }
 
+#work-form {
+  text-align: center; /* Centraliza o conteúdo dentro do formulário */
+}
+
 button {
   margin-top: 10px;
   padding: 10px;
@@ -252,9 +273,9 @@ button {
   border: none;
   cursor: pointer;
   border-radius: 5px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  display: inline-block;
+  /* margin-left: auto;
+  margin-right: auto; */
 }
 
 button:hover {
@@ -306,13 +327,92 @@ td:last-child {
   white-space: nowrap;
 }
 
-/* Responsividade para telas pequenas */
+/* Estilo personalizado para o botão Gerar Relatório */
+
+.container {
+  text-align: center; /* Centraliza o botão dentro da div */
+}
+
+.btn-custom {
+  display: inline-block; /* Garante que o botão respeite a centralização do text-align */
+  margin-top: 20px; /* Adiciona um espaço extra acima */
+}
+
+.container .btn-custom {
+  background-color: #83aba3 !important;
+  border-color: #83aba3 !important;
+  color: white !important;
+}
+
+.container .btn-custom:hover {
+  background-color: #5d7c74 !important;
+  border-color: #5d7c74 !important;
+  color: white !important;
+}
+
+/* Estilos para o modal */
+.modal-content {
+  background-color: #f8f9fa;
+}
+
+.modal-header {
+  background-color: #5d7c74;
+  color: white;
+}
+
+.modal-title {
+  font-weight: bold;
+}
+
+/* Estilos para a tabela dentro do modal */
+.modal-body table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.modal-body th, .modal-body td {
+  padding: 8px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.modal-body th {
+  background-color: #5d7c74;
+  color: white;
+}
+
+/* Estilo personalizado para o botão "Baixar PDF" */
+.modal-footer .btn-custom {
+  background-color: #83aba3 !important;
+  border-color: #83aba3 !important;
+  color: white !important;
+}
+
+.modal-footer .btn-custom:hover {
+  background-color: #5d7c74 !important;
+  border-color: #5d7c74 !important;
+  color: white !important;
+}
+
+/* Responsividade para telas pequenas (máximo de 600px) */
 @media (max-width: 600px) {
-  form {
-    display: block;
+  .header-info {
+    flex-direction: column; /* Empilha os campos de forma vertical */
+    align-items: flex-start;
   }
 
-  /* Tabela responsiva */
+  .header-info label,
+  .header-info input,
+  #save-company-salary-btn {
+    width: 100%; /* Garante que os inputs e o botão ocupem toda a largura disponível */
+    margin-bottom: 10px; /* Dá um espaçamento entre os elementos */
+  }
+
+  .form-row {
+    flex-direction: column; /* Coloca os inputs em uma coluna */
+    gap: 20px;
+  }
+
   table,
   thead,
   tbody,
@@ -322,14 +422,6 @@ td:last-child {
     display: block;
   }
 
-  tr {
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    padding: 10px;
-    background: white;
-  }
-
-  /* Exibir as células da tabela como blocos empilhados */
   th,
   td {
     width: 100%;
@@ -349,7 +441,6 @@ td:last-child {
     border-top: 1px solid #ddd;
   }
 
-  /* Ajuste no texto da última coluna */
   th:last-child,
   td:last-child {
     text-align: center;
@@ -358,6 +449,22 @@ td:last-child {
 
 /* Responsividade para telas médias (600px a 900px) */
 @media (min-width: 601px) and (max-width: 900px) {
+  .header-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-info label,
+  .header-info input,
+  #save-company-salary-btn {
+    width: 100%;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+
   table {
     width: 100%;
   }
@@ -365,35 +472,32 @@ td:last-child {
   th,
   td {
     padding: 8px;
-  }
-
-  th {
-    background-color: #5d7c74;
-    color: white;
-    text-align: left;
+    font-size: 14px;
   }
 }
 
 /* Responsividade para telas grandes (900px em diante) */
 @media (min-width: 901px) {
-  table {
-    width: 100%;
-    border-collapse: collapse;
+  .container {
+    width: 90%;
+    max-width: 1000px; /* Ajuste a largura máxima para telas maiores */
   }
 
-  th,
-  td {
-    padding: 10px;
-    text-align: left;
+  .header-info {
+    gap: 30px;
+    flex-direction: row;
+    align-items: center;
   }
 
-  th {
-    background: #5d7c74;
-    color: white;
+  .header-info label,
+  .header-info input,
+  #save-company-salary-btn {
+    width: 180px;
   }
 
-  th:last-child,
-  td:last-child {
-    text-align: center;
+  .form-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
   }
 }
