@@ -21,7 +21,11 @@ A tela inicial exibe um cabeçalho com os campos para nome da empresa e salário
 
 - Tela inicial
 
-![tela inicial](https://github.com/user-attachments/assets/18b6131e-a1da-4db1-99f2-8ce55e1fc0ee)
+![tela inicial](https://github.com/user-attachments/assets/a7646af0-87a5-4cb2-b3b5-ae3524cda345)
+
+-  Tela Modal
+
+![Tela Modal](https://github.com/user-attachments/assets/9959b4a5-6715-4644-8d7b-4843d43fce3e)
 
 ## 💻 Tecnologias Utilizadas
 
