@@ -11,6 +11,9 @@ Um aplicativo web responsivo para registrar e gerenciar seus dias trabalhados de
 - Salvar informações da empresa, como nome e salário.
 - Editar ou excluir registros conforme necessário.
 - Armazenar os registros de forma persistente no navegador usando **localStorage**.
+- Gerar relatórios mensais.
+- Baixar o relatório mensal em PDF.
+
 
 ### Tela inicial:
 
@@ -30,11 +33,15 @@ A tela inicial exibe um cabeçalho com os campos para nome da empresa e salário
 
 - **LocalStorage**:  Persistência dos dados para que os registros permaneçam salvos mesmo após o fechamento do navegador.
 
+- **Bootstrap**: Para gerar o layout responsivo e o relatório mensal.
+
+- **html2pdf.js**: Para gerar e permitir o download do relatório mensal no formato **PDF**.
+
 ## 📂 Estrutura de Pastas
 
 ```bash
 
-📂 DiarioTrabalho
+📂 Diario_Trabalho
 ├── 📁 image           # Imagens (como fundo)
 ├── index.html        # Página principal
 ├── style.css         # Estilos
@@ -48,6 +55,8 @@ A tela inicial exibe um cabeçalho com os campos para nome da empresa e salário
 - **Editar e Remover**: Os registros podem ser editados ou removidos facilmente.
 - **Salvar Empresa e Salário**: O nome da empresa e o salário são salvos no localStorage.
 - **Persistência de Dados**: Todos os registros são armazenados localmente no navegador.
+- **Gerar Relatório Mensal**: Relatório mensal gerado com Bootstrap.
+- **Baixar Relatório em PDF**: Relatório mensal pode ser baixado como um arquivo PDF através do html2pdf.js.
 
 ## 🛠️ Instalação
 
@@ -64,6 +73,8 @@ git clone https://github.com/Carla-coder/Diario_Trabalho.git
 - No formulário, adicione a data, horário de entrada e horário de saída.
 - Clique no botão "Adicionar Registro" para salvar os dados.
 - Utilize os botões de edição e exclusão para modificar ou remover um registro.
+- Para gerar o relatório mensal, clique no botão correspondente e visualize as informações organizadas.
+- Para baixar o relatório em PDF, clique no botão "Baixar PDF" dentro do modal.
 - Os dados são automaticamente salvos no localStorage, garantindo que fiquem acessíveis mesmo após fechar o navegador.
 
 ## 🙏 Agradecimentos
